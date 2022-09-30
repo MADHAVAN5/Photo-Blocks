@@ -1,9 +1,9 @@
-from flask import request, redirect, flash, send_from_directory, render_template
+from flask import Flask, request, redirect, flash, send_from_directory, render_template
 from app import *
-
+import flask
 
 @app.route("/", methods=["POST", "GET"])
-def login():
+def index():
     if flask.request.method == 'GET':
         return render_template('index.html')
     else:
@@ -11,7 +11,7 @@ def login():
             
 
 @app.route("/signup", methods=["POST", "GET"])
-def index():
+def signup():
     if flask.request.method == 'GET':
         return render_template('signup.html')
     if flask.request.method == 'POST':   
@@ -19,7 +19,7 @@ def index():
 
 
 @app.route("/login", methods=["POST", "GET"])
-def index():
+def login():
     if flask.request.method == 'GET':
         return render_template('login.html')
     if flask.request.method == 'POST':
