@@ -19,10 +19,6 @@ c = conn.cursor()
 
 @app.route('/upload', methods=['GET'])
 def UplaodGet():
-    client = get_client()
-    a = NFTService(nft_creator_pk='g0+lt62NcZ1fDdEwM3UAn+DibAWt4MvvwdHk0QQSHtApjKirZuLMRj4xtlkrxn2IHsm/05foauuKvTN2sC1MSw==', nft_creator_address='FGGKRK3G4LGEMPRRWZMSXRT5RAPMTP6TS7UGV24KXUZXNMBNJRF43Z54RY',
-     client=client, unit_name="Bot", asset_name="TestDa", nft_url="/static/uploads/QmaaxjKzGvqvkS6jvDAHjc1AqvmsuCaEtPVuZr3N2vwjw6.png")
-    a.create_nft()
     return render_template('upload.html')
 
 #Upload Post
