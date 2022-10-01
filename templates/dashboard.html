@@ -3,36 +3,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Photo Blocks</title>
-    <link rel="stylesheet" href="../static/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Grotesk&amp;display=swap">
-    <link rel="stylesheet" href="../static/assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/assets/css/Articles-Cards-images.css">
-    <link rel="stylesheet" href="../static/assets/css/Navbar-Right-Links-Dark-icons.css">
-    <link rel="stylesheet" href="../static/assets/css/News-Cards-4-Columns-v2.css">
-
+    <style>
+        .photographer-image-container{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-dark navbar-expand-md bg-dark py-3" style="background: repeating-radial-gradient(white 100%, #171515 100%), rgb(166,75,75);color: rgb(0,0,0);box-shadow: 1px 2px 18px;">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/dashboard"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon" style="background: rgba(24,188,156,0);box-shadow: 3px 3px 16px rgb(0,0,0);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-camera" style="font-size: 23px;">
-                        <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"></path>
-                        <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"></path>
-                    </svg></span><span>Photo-Blocks</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-5">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"></li>
-                    <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link border rounded border-1 border-dark" href="/upload" style="width: 107.3875px;background: rgb(139,123,123);box-shadow: 3px 3px 16px rgba(0,0,0,0.55);text-align: center;">Uploads</a></li>
-                    <li class="nav-item"><a class="nav-link border rounded border-1 border-dark" href="/" style="width: 119.5125px;box-shadow: 1px 2px 13px rgba(0,0,0,0.55);text-align: center;margin-right: 19px;background: rgb(139,123,123);">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link border rounded border-1 border-dark" href="/service" style="width: 111.4px;box-shadow: 2px 2px 11px rgba(0,0,0,0.55);text-align: center;margin-right: 17px;background: #8b7b7b;">My Works</a></li>
-                    <li class="nav-item"><a class="nav-link border rounded border-1 border-dark" href="/login" style="width: 107.3875px;background: rgb(139,123,123);box-shadow: 3px 3px 16px rgba(0,0,0,0.55);text-align: center;">My Orders</a></li>
-                </ul>
-            </div>
+    <div style="display: flex;justify-content: center;">
+        <div style="display: inline-flex; text-align: center; justify-content: center;margin-top: 94px;flex-direction: column;">
+            <img style="border-radius: 240px;" src="https://picsum.photos/260/260?random=1" alt="ProfileDP" />
+            <h1>Name</h1>
+            <hr style="border-left: 220px solid black;">
+            <h1>My Unique Works</h1>
         </div>
-    </nav>
-
-    
+    </div>
+    <div class="row" style="margin-top: 34px;">
+        <div class="col-md-4 photographer-image-container" style="padding: 70px 0;">
+            <img src="https://picsum.photos/520/640?random=1"/>
+        </div>
+        <div class="col-md-4 photographer-image-container" style="padding: 70px 0;">
+            <img src="https://picsum.photos/520/640?random=1"/>
+        </div>
+        <div class="col-md-4 photographer-image-container" style="padding: 70px 0;">
+            <img src="https://picsum.photos/520/640?random=1"/>
+        </div>
+    </div>
 </body>
 </html>
