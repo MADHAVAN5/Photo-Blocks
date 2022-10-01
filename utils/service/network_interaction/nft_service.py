@@ -1,5 +1,5 @@
-from network_interaction.network_interaction import NetworkInteraction
-from blockchain_utils.transaction_repository import ASATransactionRepository
+from utils.service.network_interaction.network_interaction import NetworkInteraction
+from utils.service.blockchain_utils.transaction_repository import ASATransactionRepository
 
 
 class NFTService:

@@ -4,6 +4,13 @@ from app import *
 import flask
 import json
 import sqlite3
+from utils.service.blockchain_utils.credentials import get_client, get_account_credentials
+from utils.service.network_interaction.nft_service import NFTService
+#from utils.service.repository.marketplace_repository import NFTMarketplace
+#from utils.service.repository.nft_repository import NFTRepository
+#from utils.service.repository.marketplace_repository import NFTMarketplaceRepository
+import time
+import algosdk
 
 from utils.uploadCheck import *
 
@@ -12,6 +19,10 @@ c = conn.cursor()
 
 @app.route('/upload', methods=['GET'])
 def UplaodGet():
+    client = get_client()
+    a = NFTService(nft_creator_pk='g0+lt62NcZ1fDdEwM3UAn+DibAWt4MvvwdHk0QQSHtApjKirZuLMRj4xtlkrxn2IHsm/05foauuKvTN2sC1MSw==', nft_creator_address='FGGKRK3G4LGEMPRRWZMSXRT5RAPMTP6TS7UGV24KXUZXNMBNJRF43Z54RY',
+     client=client, unit_name="Bot", asset_name="TestDa", nft_url="/static/uploads/QmaaxjKzGvqvkS6jvDAHjc1AqvmsuCaEtPVuZr3N2vwjw6.png")
+    a.create_nft()
     return render_template('upload.html')
 
 #Upload Post

@@ -14,7 +14,7 @@ def get_project_root_path() -> Path:
 
 def load_config():
     root_path = get_project_root_path()
-    config_location = os.path.join(root_path, 'config.yml')
+    config_location = 'config.yml'
 
     with open(config_location) as file:
         return yaml.full_load(file)
