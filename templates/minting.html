@@ -11,6 +11,9 @@
             display: flex;
             justify-content: center;
         }
+        .mint-page-div div{
+            margin-top: 20px;
+        }
     </style>
         <link rel="stylesheet" href="../static/assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
@@ -45,18 +48,20 @@
         <div class="col-md-6 photographer-image-container" style="padding: 70px 0;">
             <img src={{img_location}} width="630" height="530"/>
         </div>
-        <div class="col-md-6" style="padding: 70px 0;">
-            <form action="/minting" method="post" style="display: inline-flex;flex-direction: column;">
+        <div class="col-md-6 mint-page-div" style="padding: 70px 0;text-align: center;">
+            <form action="/minting" method="post" style="display: inline-flex;flex-direction: column;width: 35%;">
                 <div>
                     <label for="asset_name">Asset Name</label>
-                    <input type="text" name="asset_name" id="asset_name">
+                    <input style="width: 100%;" type="text" name="asset_name" id="asset_name">
                 </div>
                 <div>
                     <label for="unit_name">Unit Name</label>
-                    <input type="text" name="unit_name" id="unit_name">
+                    <input style="width: 100%;" type="text" name="unit_name" id="unit_name">
                 </div>
                 <input hidden type="text" name="nft_location" value="{{img_location}}" id="nft_location">
-                <button type="submit">Mint NFT</button>
+                <div style="text-align: center;">
+                <button class="border rounded border-1 border-dark" type="submit" style="margin-top: 32px;width: 30%;">Mint NFT</button>
+                </div>
             </form>
         </div>
     </div>

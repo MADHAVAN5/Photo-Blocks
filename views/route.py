@@ -69,5 +69,8 @@ def MintPost():
         client=client, unit_name=formData["unit_name"], asset_name=formData["asset_name"], nft_url=formData["nft_location"])
     current_trans.create_nft()
 
+    conn.execute("UPDATE photoColl SET mint = ? WHERE hash = ?", (1, formData["nft_location"]))
+    conn.commit()
+
     return redirect('/dashboard')
 
