@@ -38,7 +38,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link border rounded border-1 border-dark" href="/upload" style="width: 107.3875px;background: rgb(139,123,123);box-shadow: 3px 3px 16px rgba(0,0,0,0.55);text-align: center;">Uploads</a></li>
+                    <li class="nav-item"><a class="nav-link border rounded border-1 border-dark" href="/upload" style="width: 107.3875px;background: rgb(139,123,123);box-shadow: 3px 3px 16px rgba(0,0,0,0.55);margin-right: 19px;text-align: center;">Uploads</a></li>
                     <li class="nav-item"><a class="nav-link border rounded border-1 border-dark" href="/dashboard" style="width: 119.5125px;box-shadow: 1px 2px 13px rgba(0,0,0,0.55);text-align: center;margin-right: 19px;background: rgb(139,123,123);">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link border rounded border-1 border-dark" href="/myorders" style="width: 107.3875px;background: rgb(139,123,123);box-shadow: 3px 3px 16px rgba(0,0,0,0.55);text-align: center;">My Orders</a></li>
                 </ul>
@@ -87,10 +87,17 @@
     </script>
         <form method="post" action="/upload" enctype="multipart/form-data"  id = 'filepicker'>
             <div class="col text-center" style="display:flex;flex-direction: column;justify-content: center;">
-                <label for="">Select Image File</label>
-                <input type="file" name="file">
+                <label for="" style="color: white;">Select Image File</label>
+                <input type="file" name="file" style="color: white;">
                 <input hidden type="text" name="wallet_id" id="wallet_id">
+<<<<<<< HEAD
                 <input class="btn btn-primary" type="submit" style="height: 41px; width: 25%;" name="submit" value="Upload">
+=======
+
+                <div style="display: flex;justify-content: center;">
+                    <button style="width:20%; height: 52px;margin-top: 20px;" class="btn btn-primary" type="submit" name="submit">Add Image</button>
+                </div>
+>>>>>>> 5aed22db9a217abc1b58571b6a1b606c54329b4a
             </div>
         </form>
 </body>

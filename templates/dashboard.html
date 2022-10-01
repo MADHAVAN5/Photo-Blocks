@@ -34,7 +34,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link border rounded border-1 border-dark" href="/upload" style="width: 107.3875px;background: rgb(139,123,123);box-shadow: 3px 3px 16px rgba(0,0,0,0.55);text-align: center;">Uploads</a></li>
+                    <li class="nav-item"><a class="nav-link border rounded border-1 border-dark" href="/upload" style="width: 107.3875px;background: rgb(139,123,123);box-shadow: 3px 3px 16px rgba(0,0,0,0.55);margin-right: 19px;text-align: center;">Uploads</a></li>
                     <li class="nav-item"><a class="nav-link border rounded border-1 border-dark" href="/dashboard" style="width: 119.5125px;box-shadow: 1px 2px 13px rgba(0,0,0,0.55);text-align: center;margin-right: 19px;background: rgb(139,123,123);">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link border rounded border-1 border-dark" href="/myorders" style="width: 107.3875px;background: rgb(139,123,123);box-shadow: 3px 3px 16px rgba(0,0,0,0.55);text-align: center;">My Orders</a></li>
                 </ul>
@@ -42,11 +42,11 @@
         </div>
     </nav>
 
-
+    <button class="btn btn-primary" style="position: absolute;top:30%;right:10%;width: 190px;height: 64px;">Hire Me !</button>
     <div style="display: flex;justify-content: center;">
-        <div style="display: inline-flex; text-align: center; justify-content: center;margin-top: 94px;flex-direction: column;">
-            <img style="border-radius: 240px;" src="https://picsum.photos/260/260?random=1" alt="ProfileDP" />
-            <h1>Name</h1>
+        <div style="display: inline-flex; text-align: center; justify-content: center;margin-top: 94px;flex-direction: column;align-items: center;">
+            <img style="border-radius: 240px;" src="https://picsum.photos/260/260?random=1" width="260" height="260" alt="ProfileDP" />
+            <h1>{{name}}</h1>
             <hr style="border-left: 220px solid black;">
             <h1>My Unique Works</h1>
         </div>
@@ -54,9 +54,18 @@
     <div class="row" style="margin-top: 34px;">
         {% for row in results %}
         <div class="col-md-4 photographer-image-container" style="padding: 70px 0;">
-          <a href="/minting/{{row[-1].split('/')[-1].split('.')[0]}}"><img src={{row[-1]}} width="530" height="430"/></a>
-        </div>
+            {%if(row[-1] != 0)%}
+                <a href="#" onclick="minted()"><img src={{row[-2]}} width="530" height="430"/></a>
+            {% else %}
+                <a href="/minting/{{row[-2].split('/')[-1].split('.')[0]}}"><img src={{row[-2]}} width="530" height="430"/></a>
+            {% endif %}
+            </div>
         {% endfor %}
     </div>
+    <script>
+       function minted() {
+        alert("Digital Asset Already Minted");
+       } 
+    </script>
 </body>
 </html>
