@@ -19,10 +19,6 @@ c = conn.cursor()
 
 @app.route('/upload', methods=['GET'])
 def UplaodGet():
-    client = get_client()
-    a = NFTService(nft_creator_pk='g0+lt62NcZ1fDdEwM3UAn+DibAWt4MvvwdHk0QQSHtApjKirZuLMRj4xtlkrxn2IHsm/05foauuKvTN2sC1MSw==', nft_creator_address='FGGKRK3G4LGEMPRRWZMSXRT5RAPMTP6TS7UGV24KXUZXNMBNJRF43Z54RY',
-     client=client, unit_name="Bot", asset_name="TestDa", nft_url="/static/uploads/QmaaxjKzGvqvkS6jvDAHjc1AqvmsuCaEtPVuZr3N2vwjw6.png")
-    a.create_nft()
     return render_template('upload.html')
 
 #Upload Post
@@ -47,7 +43,7 @@ def UplaodPost():
         res = api.add(os.path.join(app.config['UPLOAD_FOLDER']+'tmp/'+ file.filename.split('.')[0] + '.png'))
         org.save(os.path.join(app.config['UPLOAD_FOLDER'] + res['Hash'] + '.png'))
 
-        imgPath = "/static/" + app.config['UPLOAD_FOLDER'] + res['Hash'] + '.png'
+        imgPath = "/static/uploads/" + res['Hash'] + '.png'
         imgPath = imgPath.replace("\\", "/")
         conn.execute("INSERT INTO photoColl(owner,hash) VALUES (?, ?)", (formData['wallet_id'], imgPath))
         conn.commit()
@@ -59,3 +55,19 @@ def UplaodPost():
         flash('Allowed image types are -> png, jpg, jpeg')
         return redirect(request.url)
 # ---------------------------------------------------------- #
+
+@app.route('/minting/<unique_hash_link>', methods=['GET'])
+def MintGet(unique_hash_link):
+    return render_template('minting.html', img_location='/static/uploads/'+unique_hash_link+'.png')
+
+@app.route('/minting', methods=['POST'])
+def MintPost():
+    formData = request.form
+
+    client = get_client()
+    current_trans = NFTService(nft_creator_pk='mGEs+qL0wLeBLc5ms+AMm2uqXiU4jzMadUBMTn+FQlnE9uwS9OAaS1P8fQz5hqea9txeH4rfGAB4e2cpQEzDuA==', nft_creator_address='YT3OYEXU4ANEWU74PUGPTBVHTL3NYXQ7RLPRQADYPNTSSQCMYO4BHMP62Y',
+        client=client, unit_name=formData["unit_name"], asset_name=formData["asset_name"], nft_url=formData["nft_location"])
+    current_trans.create_nft()
+
+    return redirect('/dashboard')
+

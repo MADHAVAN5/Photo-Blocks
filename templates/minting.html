@@ -41,22 +41,24 @@
             </div>
         </div>
     </nav>
-
-
-    <div style="display: flex;justify-content: center;">
-        <div style="display: inline-flex; text-align: center; justify-content: center;margin-top: 94px;flex-direction: column;">
-            <img style="border-radius: 240px;" src="https://picsum.photos/260/260?random=1" alt="ProfileDP" />
-            <h1>Name</h1>
-            <hr style="border-left: 220px solid black;">
-            <h1>My Unique Works</h1>
-        </div>
-    </div>
     <div class="row" style="margin-top: 34px;">
-        {% for row in results %}
-        <div class="col-md-4 photographer-image-container" style="padding: 70px 0;">
-          <a href="/minting/{{row[-1].split('/')[-1].split('.')[0]}}"><img src={{row[-1]}} width="530" height="430"/></a>
+        <div class="col-md-6 photographer-image-container" style="padding: 70px 0;">
+            <img src={{img_location}} width="630" height="530"/>
         </div>
-        {% endfor %}
+        <div class="col-md-6" style="padding: 70px 0;">
+            <form action="/minting" method="post" style="display: inline-flex;flex-direction: column;">
+                <div>
+                    <label for="asset_name">Asset Name</label>
+                    <input type="text" name="asset_name" id="asset_name">
+                </div>
+                <div>
+                    <label for="unit_name">Unit Name</label>
+                    <input type="text" name="unit_name" id="unit_name">
+                </div>
+                <input hidden type="text" name="nft_location" value="{{img_location}}" id="nft_location">
+                <button type="submit">Mint NFT</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
