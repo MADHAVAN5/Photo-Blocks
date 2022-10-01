@@ -11,7 +11,7 @@ c = conn.cursor()
 @app.route("/", methods=["POST", "GET"])
 def index():
     if flask.request.method == 'GET':
-        return render_template('minting.html')
+        return render_template('index.html')
     else:
         pass
     

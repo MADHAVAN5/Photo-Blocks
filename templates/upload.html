@@ -55,16 +55,44 @@
         document.getElementById('wallet_id').value = results[0].address
      })</script>
      
-    <div class="container">
+         <div class="container">
+        <input type="file" class="upload_hide" id="upload_costum" multiple>
+        <label for="upload_costum"  class="upload_label">
+            <div class="image">
+                <img src="" alt="">
+            </div>
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p class="drag_text">Drag & Drop to Upload File</p>
+            <button class="choose_file">Choose a File</button>
+        </label>
+        <button class="delete_file"> Delete File</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $('.delete_file').hide();
+        $('#upload_costum').change(function(event) {
+            let tmppath = URL.createObjectURL(event.target.files[0])
+            $('.image > img').fadeIn('fast').attr('src',tmppath)
+            $('.delete_file').show();
+            $('.choose_file').hide();
+
+            $('.delete_file').click(function() {
+                $('.image > img').fadeIn('fast').attr('src','')
+              $('.delete_file').hide();
+              
+
+            })
+        })
+    </script>
         <form method="post" action="/upload" enctype="multipart/form-data"  id = 'filepicker'>
             <div class="col text-center" style="display:flex;flex-direction: column;justify-content: center;">
                 <label for="">Select Image File</label>
                 <input type="file" name="file">
                 <input hidden type="text" name="wallet_id" id="wallet_id">
-                <input style="width:20%;" class="btn btn-primary" type="submit" style="height: 41px;" name="submit" value="Upload">
+                <input class="btn btn-primary" type="submit" style="height: 41px; width: 25%;" name="submit" value="Upload">
             </div>
         </form>
-    </div>
 </body>
 </html>
 

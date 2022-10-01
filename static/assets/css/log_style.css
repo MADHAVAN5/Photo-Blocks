@@ -45,7 +45,7 @@ h3 {
     font-size: 2vw;
 }
 
-#type,.name {
+#type, #name {
     width: 320px;
     height: 35px;
     border-radius: 10px;
