@@ -15,36 +15,15 @@
     </head>
     <body> 
         <!-- CHECK -->
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        Check AlgoSigner
-      </h1>
-      <p class="subtitle">
-        Check if AlgoSigner library is available on your Browser
-      </p>
-
-      <div class="columns">
-        <div class="column">
-          <button class="button is-primary is-fullwidth" id="check">Check</button>
-          <pre class="mt-2"><code class="JSON" id="check-code">response</code></pre>
-        </div>
-      </div>
-    </div>
-  </section>      
+        <button id="connect-code" onclick="sendSignUpPost()">Connect to wallet</button>    
+      
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
         <script src="/static/assets/js/AlgoSigner.js"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
         <script>
-            document.getElementById('check').addEventListener('click', check);
-            /*
-            document.getElementById('connect').addEventListener('click', connect);
-            document.getElementById('sdksetup').addEventListener('click', sdkSetup);
-            document.getElementById('accounts').addEventListener('click', accounts);
-            document.getElementById('status').addEventListener('click', status);
-            document.getElementById('assets').addEventListener('click', assets);
-            */
+
+
         </script>
     </body>
 </html>
