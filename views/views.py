@@ -11,10 +11,14 @@ c = conn.cursor()
 @app.route("/", methods=["POST", "GET"])
 def index():
     if flask.request.method == 'GET':
-        return render_template('land.html')
+        return render_template('index.html')
     else:
         pass
     
+@app.route("/service", methods=["GET"])
+def service():
+    return render_template("service.html")
+
 
 @app.route("/dashboard", methods=["GET", 'POST'])
 def dashboard():
