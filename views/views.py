@@ -23,11 +23,9 @@ def service():
 @app.route("/dashboard", methods=["GET", 'POST'])
 def dashboard():
     if flask.request.method == "GET":
-        print(request.cookies.get('userID') == 'YT3OYEXU4ANEWU74PUGPTBVHTL3NYXQ7RLPRQADYPNTSSQCMYO4BHMP62Y')
-        conn.execute("SELECT * FROM photoColl WHERE owner = ?", (request.cookies.get('userID'), ))
-        result = c.fetchall()
-        print(result)
-        return render_template("dashboard.html")
+        c.execute("SELECT * FROM photoColl WHERE owner = ?", (request.cookies.get('userID'), ))
+        results = c.fetchall()
+        return render_template("dashboard.html", results=results)
     return render_template("dashboard.html")
 
 

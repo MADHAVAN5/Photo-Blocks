@@ -52,15 +52,11 @@
         </div>
     </div>
     <div class="row" style="margin-top: 34px;">
+        {% for row in results %}
         <div class="col-md-4 photographer-image-container" style="padding: 70px 0;">
-            <img src="https://picsum.photos/520/640?random=1"/>
+            <img src={{row[-1]}}/>
         </div>
-        <div class="col-md-4 photographer-image-container" style="padding: 70px 0;">
-            <img src="https://picsum.photos/520/640?random=1"/>
-        </div>
-        <div class="col-md-4 photographer-image-container" style="padding: 70px 0;">
-            <img src="https://picsum.photos/520/640?random=1"/>
-        </div>
+        {% endfor %}
     </div>
 </body>
 </html>
