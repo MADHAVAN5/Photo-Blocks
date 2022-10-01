@@ -1,9 +1,8 @@
-from blockchain_utils import (
+from utils.service.blockchain_utils import (
     ApplicationTransactionRepository,
     ASATransactionRepository,
     PaymentTransactionRepository,
 )
-from network_interaction import NetworkInteraction
 from algosdk import logic as algo_logic
 from algosdk.future import transaction as algo_txn
 from pyteal import compileTeal, Mode

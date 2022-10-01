@@ -2,8 +2,6 @@ from abc import ABC, abstractmethod
 from pyteal import *
 import algosdk
 
-from marketplace_interfaces.nft_marketplace import NFTMarketplaceInterface
-
 class NFTMarketplaceInterface(ABC):
 
     @abstractmethod
