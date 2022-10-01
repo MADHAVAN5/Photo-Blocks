@@ -1,7 +1,4 @@
 from os import walk
-import cv2
-import pandas as pd
-import numpy as np
 from PIL import Image
 
 from app import *

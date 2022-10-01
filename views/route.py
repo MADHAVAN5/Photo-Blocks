@@ -17,7 +17,7 @@ def UplaodGet():
 #Upload Post
 @app.route('/upload', methods=['POST'])
 def UplaodPost():
-    print(request.form)
+    formData = request.form
     if 'file' not in request.files:
         flash('No file part')
         return redirect(request.url)
@@ -32,14 +32,15 @@ def UplaodPost():
         org.save(os.path.join(app.config['UPLOAD_FOLDER']+'tmp/'+ file.filename.split('.')[0] + '.png'))
 
         import ipfsApi
-        api = ipfsApi.Client('127.0.0.1', 5002)
+        api = ipfsApi.Client('172.117.228.188', 4002)
         res = api.add(os.path.join(app.config['UPLOAD_FOLDER']+'tmp/'+ file.filename.split('.')[0] + '.png'))
-        print(res)
         org.save(os.path.join(app.config['UPLOAD_FOLDER'] + res['Hash'] + '.png'))
 
+        conn.execute("INSERT INTO photoColl VALUES (?, ?)", (formData['wallet_id'], os.path.join(app.config['UPLOAD_FOLDER'] + res['Hash'] + '.png')))
+        conn.commit()
         erase_dir()
         
-        return render_template('index.html')
+        return render_template('dashboard.html')
 
     else:
         flash('Allowed image types are -> png, jpg, jpeg')
