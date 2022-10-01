@@ -47,7 +47,9 @@ def UplaodPost():
         res = api.add(os.path.join(app.config['UPLOAD_FOLDER']+'tmp/'+ file.filename.split('.')[0] + '.png'))
         org.save(os.path.join(app.config['UPLOAD_FOLDER'] + res['Hash'] + '.png'))
 
-        conn.execute("INSERT INTO photoColl(owner,hash) VALUES (?, ?)", (formData['wallet_id'], os.path.join(app.config['UPLOAD_FOLDER'] + res['Hash'] + '.png')))
+        imgPath = "/static/" + app.config['UPLOAD_FOLDER'] + res['Hash'] + '.png'
+        imgPath = imgPath.replace("\\", "/")
+        conn.execute("INSERT INTO photoColl(owner,hash) VALUES (?, ?)", (formData['wallet_id'], imgPath))
         conn.commit()
         erase_dir()
         
