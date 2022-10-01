@@ -5,7 +5,7 @@ import flask
 @app.route("/", methods=["POST", "GET"])
 def index():
     if flask.request.method == 'GET':
-        return render_template('index.html')
+        return render_template('land.html')
     else:
         pass
             
