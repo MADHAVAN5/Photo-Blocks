@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, flash, send_from_directory, render_template, jsonify
+from flask import Flask, request, redirect, flash, send_from_directory, render_template, jsonify, url_for
 from app import *
 import flask
 import json
@@ -29,7 +29,7 @@ def login():
     if flask.request.method == 'POST':
         data = request.data.decode("utf-8")
         data = json.loads(data)
-        c.execute("INSERT INTO users VALUES (?, ?)", (data['type'], data['addr']))
+        c.execute("INSERT INTO users VALUES (?, ?, ?)", (data['name'], data['addr'], data['type']))
         conn.commit()
-        return redirect("/dashboard")
+        return redirect(url_for("dashboard"))
 

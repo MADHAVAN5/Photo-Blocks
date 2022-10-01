@@ -31,7 +31,6 @@
             })
             .catch((e) => {
               console.error(e);
-              document.getElementById('connect-code').innerHTML = JSON.stringify(e);
             });
             AlgoSigner.accounts({ ledger: 'TestNet' }).then((results)=>{
               addr = results[0].address
@@ -43,8 +42,6 @@
                           body: JSON.stringify({addr, name, type})
                         })
             })
-            
-
           }
   </script>
   <div class="lcorner">
