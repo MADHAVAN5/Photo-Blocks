@@ -1,0 +1,14 @@
+client_credentials:
+    token: "vBI92cJaewU1f9w0Mn6o5sUWPWaO0r3ju0tg9Mh0"
+    address: "https://testnet-algorand.api.purestake.io/ps2"
+
+accounts:
+    account_1:
+        address: "YT3OYEXU4ANEWU74PUGPTBVHTL3NYXQ7RLPRQADYPNTSSQCMYO4BHMP62Y"
+        private_key: "mGEs+qL0wLeBLc5ms+AMm2uqXiU4jzMadUBMTn+FQlnE9uwS9OAaS1P8fQz5hqea9txeH4rfGAB4e2cpQEzDuA=="
+        mnenonic: "credit ranch laptop enforce limit hospital hire soda holiday lizard major rifle feel fish scorpion monkey edit stamp cage tooth write pattern skate able shadow"
+
+    account_2:
+        address: "FGGKRK3G4LGEMPRRWZMSXRT5RAPMTP6TS7UGV24KXUZXNMBNJRF43Z54RY"
+        private_key: "g0+lt62NcZ1fDdEwM3UAn+DibAWt4MvvwdHk0QQSHtApjKirZuLMRj4xtlkrxn2IHsm/05foauuKvTN2sC1MSw=="
+        mnenonic: "vacant news swift suspect toast trap helmet speed gravity state lens antique shift forest habit thing west amateur happy bundle answer loyal liberty absorb loyal"
