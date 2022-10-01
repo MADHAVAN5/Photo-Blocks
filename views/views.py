@@ -23,6 +23,10 @@ def service():
 @app.route("/dashboard", methods=["GET", 'POST'])
 def dashboard():
     if flask.request.method == "GET":
+        print(request.cookies.get('userID') == 'YT3OYEXU4ANEWU74PUGPTBVHTL3NYXQ7RLPRQADYPNTSSQCMYO4BHMP62Y')
+        conn.execute("SELECT * FROM photoColl WHERE owner = ?", (request.cookies.get('userID'), ))
+        result = c.fetchall()
+        print(result)
         return render_template("dashboard.html")
     return render_template("dashboard.html")
 
@@ -41,6 +45,10 @@ def login():
         if len(records)==0:
             conn.execute("INSERT INTO users VALUES (?, ?, ?)", (data['type'], data['name'], data['addr']))
             conn.commit()
-        return render_template('dashboard.html')
+
+        resp = make_response(redirect('/dashboard'))
+        resp.set_cookie('userID', data['addr'])
+
+        return resp
     
 
