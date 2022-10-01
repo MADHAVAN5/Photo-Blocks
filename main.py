@@ -1,5 +1,6 @@
 from app import *
 import views.views as views
+import views.route as route
 
 from app import *
 
