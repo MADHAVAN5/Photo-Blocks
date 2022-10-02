@@ -49,5 +49,7 @@ def login():
         resp.set_cookie('userID', data['addr'])
 
         return resp
-    
 
+@app.route("/hire", methods=["POST", "GET"])
+def hire():
+    return render_template('hiring.html', current_id=request.cookies.get('userID'))
